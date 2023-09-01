@@ -9,7 +9,13 @@ public class Main {
         System.out.println("Phone Number: " + account.getPhoneNumber());
         System.out.println("Initial Balance: $" + account.getAccountBalance());
 
-        account.deposit(500.00);
+        boolean depositSuccess = account.deposit(500.00);
+        if (depositSuccess) {
+            System.out.println("Deposit was successful.");
+        } else {
+            System.out.println("Deposit failed.");
+        }
+        
         account.withdraw(200.00);
         account.withdraw(800.00);  // This should display an insufficient funds message.
     }
