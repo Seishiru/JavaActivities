@@ -53,14 +53,16 @@ public class BankAccount {
         this.phoneNumber = phoneNumber;
     }
 
-    public void deposit(double amount) {
-        if (amount > 0) {
-            accountBalance += amount;
-            System.out.println("Deposited $" + amount + " into the account. New balance: $" + accountBalance);
-        } else {
-            System.out.println("Invalid deposit amount.");
-        }
+    public boolean deposit(double amount) {
+    if (amount > 0) {
+        accountBalance += amount;
+        System.out.println("Deposit successful. New balance: $" + accountBalance);
+        return true;
+    } else {
+        System.out.println("Deposit failed. Invalid deposit amount.");
+        return false;
     }
+}
 
     public void withdraw(double amount) {
         if (amount > 0 && amount <= accountBalance) {
