@@ -1,3 +1,5 @@
+package mytime;
+
 public class Main {
     public static void main(String[] args) {
         MyTime time = new MyTime(17, 58, 50, true);
