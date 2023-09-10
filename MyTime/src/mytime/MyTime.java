@@ -54,11 +54,11 @@ public class MyTime {
     }
 
     public void tickBySecond() {
-        advanceTime(60);
+        advanceTime(1);
     }
 
     public void tickByMinute() {
-        advanceTime(3600);
+        advanceTime(60);
     }
 
     public void tickByHour() {
@@ -66,8 +66,9 @@ public class MyTime {
     }
 
     public void displayTime12() {
-        String merideanStr = meridean ? "PM" : "AM";
-        System.out.printf("%02d:%02d:%02d %s%n", hours, minutes, seconds, merideanStr);
+        int displayHours = (hours == 0 || hours == 12) ? 12 : hours % 12; // Convert 0 and 12 to 12 for 12-hour format
+        String meridianStr = meridean ? "PM" : "AM";
+        System.out.printf("%02d:%02d:%02d %s%n", displayHours, minutes, seconds, meridianStr);
     }
 
     public void displayTime24() {
